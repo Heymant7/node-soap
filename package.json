@@ -7,8 +7,8 @@
   },
   "author": "Amit Kumar <amit.kumar@investwellonline.com>",
   "dependencies": {
-    "axios": "^1.9.0",
-    "axios-ntlm": "^1.4.4",
+    "axios": "1.9.0",
+    "axios-ntlm": "1.4.4",
     "debug": "^4.4.1",
     "formidable": "^3.5.4",
     "get-stream": "^6.0.1",

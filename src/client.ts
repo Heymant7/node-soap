@@ -525,7 +525,7 @@ export class Client extends EventEmitter {
           getStream(res.data).then((body) => {
             this.lastResponse = body;
             this.lastElapsedTime = Date.now() - startTime;
-            this.lastResponseHeaders = res?.headers as unknown as IncomingHttpHeaders;
+            this.lastResponseHeaders = res && res.headers;
             // Added mostly for testability, but possibly useful for debugging
             this.lastRequestHeaders = res.config && res.config.headers || res.headers;
             this.emit('response', body, res, eid);
@@ -543,7 +543,7 @@ export class Client extends EventEmitter {
           this.wsdl.xmlToObject(res.data, (error, obj) => {
             this.lastResponse = res;
             this.lastElapsedTime = Date.now() - startTime;
-            this.lastResponseHeaders = res?.headers as unknown as IncomingHttpHeaders;
+            this.lastResponseHeaders = res && res.headers;
             // Added mostly for testability, but possibly useful for debugging
             this.lastRequestHeaders = res.config.headers;
             this.emit('response', '<stream>', res.data, eid);
